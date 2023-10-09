@@ -1,0 +1,58 @@
+.Item {
+	width: 100%;
+	background-color: #0F0F0F;
+	border-radius: 8px;
+	min-height: 60px;
+	color: #C3C3C3;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px;
+}
+
+.Item .infos {
+	width: 84%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 8px;
+}
+
+.Item .infos img {
+	height: 40px;
+	border-radius: 50%;
+}
+
+.Item .infos span {
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+}
+
+.Item .upvotes {
+	cursor: pointer;
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Raleway', sans-serif;
+	width: 16%;
+	height: 50px;
+	color: #FF7F27;
+	gap: 2px;
+	transition: 300ms;
+}
+
+.Item .upvotes:hover {
+	background-color: #FF7F2720;
+}
+
+.Item .upvotes.voted:hover {
+	cursor: default;
+	background: none;
+}
+
+.Item .upvotes img {
+	height: 25px;
+	width: 25px;
+}

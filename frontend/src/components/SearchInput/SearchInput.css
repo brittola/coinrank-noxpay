@@ -1,0 +1,30 @@
+.SearchInput {
+	background-color: #2B2B2B;
+	width: 100%;
+	max-width: 350px;
+	margin: auto;
+	margin-bottom: 16px;
+	padding: 6px 12px;
+	border-radius: 6px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.SearchInput input {
+	background: none;
+	outline: none;
+	border: none;
+	color: #fff;
+	font-family: 'Raleway', sans-serif;
+	width: 85%;
+	padding: 10px 0px;
+}
+
+.SearchInput input::placeholder {
+	color: #fff;
+}
+
+.SearchInput svg {
+	color: #fff;
+}

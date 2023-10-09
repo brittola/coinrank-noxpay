@@ -1,0 +1,14 @@
+.App {
+	width: 95%;
+	max-width: 500px;
+	height: 90vh;
+	margin: auto;
+}
+
+.App >p {
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	text-align: center;
+	color: #C3C3C3;
+	margin-bottom: 16px;
+}
