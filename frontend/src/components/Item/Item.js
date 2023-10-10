@@ -7,7 +7,7 @@ function Item({...props}) {
 	return (
 		<div className="Item">
 			<div className="infos">
-				<img src={props.info.iconUrl} alt={props.info.name + ' logo'} />
+				<img src={props.info.icon_url} alt={props.info.name + ' logo'} />
 				<span>{props.info.name}</span>
 			</div>
 			<div

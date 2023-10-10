@@ -6,6 +6,7 @@ import (
 	_ "github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 // estrutura do json de upvotes
@@ -24,6 +25,8 @@ func main() {
 
 	// inicializando o echo
 	e := echo.New()
+
+	e.Use(middleware.CORS())
 
 	// rotas
 	e.GET("/coins", func(c echo.Context) error {
