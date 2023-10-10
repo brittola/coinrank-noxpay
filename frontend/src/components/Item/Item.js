@@ -11,11 +11,9 @@ function Item({...props}) {
 				<span>{props.info.name}</span>
 			</div>
 			<div
-				className={props.info.voted ? 'upvotes voted' : 'upvotes'}
+				className="upvotes"
 				onClick={() => {
-					if (!props.info.voted) {
-						props.upvote(props.info)
-					}
+					props.upvote(props.info)
 				}}
 			>
 				<img src={props.info.voted ? upvoteActive : upvote} alt="Seta para cima de votação" />

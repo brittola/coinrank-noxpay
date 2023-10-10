@@ -47,11 +47,6 @@
 	background-color: #FF7F2720;
 }
 
-.Item .upvotes.voted:hover {
-	cursor: default;
-	background: none;
-}
-
 .Item .upvotes img {
 	height: 25px;
 	width: 25px;
