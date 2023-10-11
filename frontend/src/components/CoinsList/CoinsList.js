@@ -3,24 +3,26 @@ import Item from '../Item/Item'
 
 function CoinsList({...props}) {
 
+	const {items, error, loading, upvote} = props;
+
 	return (
 		<div className="CoinsList">
 			{
-				props.items.length > 0 &&
-					props.items.map((item, index) => (
-						<Item key={index} info={item} upvote={props.upvote} />
+				items.length > 0 &&
+					items.map((item, index) => (
+						<Item key={index} info={item} upvote={upvote} />
 					))
 			}
 			{	// busca por nome inválido
-				(props.items.length === 0 && !props.error && !props.loading) &&
+				(items.length === 0 && !error && !loading) &&
 					<p>Nenhum resultado encontrado.</p>
 			}
 			{	// erro ao carregar dados
-				(props.items.length === 0 && props.error && !props.loading) &&
-					<p>{props.error}</p>
+				(items.length === 0 && error && !loading) &&
+					<p>{error}</p>
 			}
 			{	// dados ainda não carregados
-				(props.items.length === 0 && !props.error && props.loading) &&
+				(items.length === 0 && !error && loading) &&
 					<p>Carregando...</p>
 			}
 		</div>

@@ -15,6 +15,7 @@ function App() {
 
 	const upvote = (coin) => {
 
+		// verifica se o item já estava votado
 		const i = items.findIndex(item => item.id === coin.id);
 		let upvotes = 0;
 
@@ -26,6 +27,7 @@ function App() {
 
 		const reqBody = JSON.stringify({ id: coin.id, upvotes })
 
+		// salva em banco de dados e atualiza o state
 		fetch(`http://localhost:8080/coins`, {
 			method: 'PUT',
 			headers: {
@@ -54,8 +56,8 @@ function App() {
 		setSearch(e.target.value);
 	};
 
+	// inicializa lista de moedas
 	useEffect(() => {
-		// obter lista de moedas
 		fetch('http://localhost:8080/coins')
 			.then(res => res.json())
 			.then(json => {
@@ -65,7 +67,6 @@ function App() {
 
 				// buscar votos salvos em localStorage
 				if (localStorage.getItem('coins_voted')) {
-					console.log('tem salvo');
 					const voted = JSON.parse(localStorage.getItem('coins_voted'));
 
 					const updatedItems = data.map(item => ({
@@ -75,7 +76,6 @@ function App() {
 
 					setItems(updatedItems);
 				} else {
-					console.log('não tem salvo');
 					const updatedItems = data.map(item => ({
 						...item,
 						voted: false
@@ -91,6 +91,7 @@ function App() {
 			})
 	}, [])
 
+	// salva os votos em localStorage
 	useEffect(() => {
 		if (localStorage.getItem('coins_voted')) {
 			let coins_voted = JSON.parse(localStorage.getItem('coins_voted'));
@@ -100,6 +101,7 @@ function App() {
 					coins_voted.push(item.name);
 				}
 
+				// se o voto foi removido, remove do array salvo em localStorage
 				if (!item.voted) {
 					coins_voted = coins_voted.filter(coin => coin !== item.name);
 				}
@@ -115,11 +117,10 @@ function App() {
 		}
 	}, [items])
 
+	// filtro da busca + ordenação por upvotes/popularidade
 	const filteredItems = items.filter((item) =>
 		item.name.toLowerCase().includes(search.toLowerCase())
-	);
-
-	filteredItems.sort((a, b) => b.upvotes - a.upvotes);
+	).sort((a, b) => b.upvotes - a.upvotes);
 
 	return (
 		<div className="App">

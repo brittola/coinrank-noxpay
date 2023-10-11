@@ -9,6 +9,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
+// exporta conexão com o banco
 func ConnectDatabase() (*gorm.DB, error) {
 	err := godotenv.Load()
 	if err != nil {

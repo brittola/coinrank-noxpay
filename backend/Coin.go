@@ -4,6 +4,7 @@ import (
 	_ "github.com/jinzhu/gorm"
 )
 
+// model
 type Coin struct {
 	ID      uint   `json:"id"`
 	Name    string `json:"name"`

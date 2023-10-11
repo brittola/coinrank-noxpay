@@ -1,23 +1,25 @@
 import './Item.css'
-import upvote from '../../assets/img/upvote.png'
-import upvoteActive from '../../assets/img/upvote_active.png'
+import upvoteArrow from '../../assets/img/upvote.png'
+import upvoteArrowActive from '../../assets/img/upvote_active.png'
 
 function Item({...props}) {
+
+	const {info, upvote} = props;
 
 	return (
 		<div className="Item">
 			<div className="infos">
-				<img src={props.info.icon_url} alt={props.info.name + ' logo'} />
-				<span>{props.info.name}</span>
+				<img src={info.icon_url} alt={info.name + ' logo'} />
+				<span>{info.name}</span>
 			</div>
 			<div
 				className="upvotes"
 				onClick={() => {
-					props.upvote(props.info)
+					upvote(info)
 				}}
 			>
-				<img src={props.info.voted ? upvoteActive : upvote} alt="Seta para cima de votação" />
-				<span>{props.info.upvotes}</span>
+				<img src={info.voted ? upvoteArrowActive : upvoteArrow} alt="Seta para cima de votação" />
+				<span>{info.upvotes}</span>
 			</div>
 		</div>
 	)
