@@ -6,6 +6,8 @@ import SearchInput from './components/SearchInput/SearchInput';
 
 function App() {
 
+	const API_URL = 'https://coinrank.onrender.com/coins';
+
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState('')
 
@@ -28,7 +30,7 @@ function App() {
 		const reqBody = JSON.stringify({ id: coin.id, upvotes })
 
 		// salva em banco de dados e atualiza o state
-		fetch(`http://localhost:8080/coins`, {
+		fetch(API_URL, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
@@ -58,7 +60,7 @@ function App() {
 
 	// inicializa lista de moedas
 	useEffect(() => {
-		fetch('http://localhost:8080/coins')
+		fetch(API_URL)
 			.then(res => res.json())
 			.then(json => {
 				setLoading(false);
