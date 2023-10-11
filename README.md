@@ -32,7 +32,7 @@ Retorna um JSON com os dados da moeda atualizados.
 ![image](https://github.com/brittola/coinrank-noxpay/assets/99913525/a3724126-0dd5-478c-bc22-c1f1bbe10490)
 
 ### Front-End
-Consome a API e lista as moedas na tela, permitindo o usuário visualizar, buscar por nome e aumentar a popularidade com voto.
+Consome a API e lista as moedas na tela, permitindo o usuário visualizar, buscar por nome e aumentar a popularidade com voto. Como o back-end não contempla cadastros/autenticação, o voto do usuário fica registrado em localStorage.
 
 ![image](https://github.com/brittola/coinrank-noxpay/assets/99913525/03c2ee1b-4582-45fd-9493-91f3f30077dd)
 
