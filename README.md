@@ -10,7 +10,7 @@ Aplicação de ranking de popularidade de moedas, criada para resolução de tes
 É necessário que você tenha Node.js, PostgreSQL e Golang instalados.
 1. Clone esse repositório;
 2. Acesse o diretório /frontend e rode o comando `npm install`;
-3. Configure a conexão com o PostgreSQL no arquivo database.go e crie um arquivo .env com a variável `DATABASE_PASSWORD`, que deve armazenar a senha do usuário de conexão; também é necessário criar uma tabela "coins" no banco de dados, baseando-se nos campos do Model no arquivo Coin.go;
+3. Configure a conexão com o PostgreSQL no arquivo database.go e crie um arquivo .env com a variável `DATABASE_URL`, que deve armazenar a string de conexão; também é necessário criar uma tabela "coins" no banco de dados, baseando-se nos campos do Model no arquivo Coin.go;
 4. Retorne ao diretório raiz e execute o arquivo dev.bat, com o comando `./dev.bat`, caso esteja usando Windows.
 Se você estiver usando Linux ou MacOS, rode o arquivo dev.sh, com o comando `./dev.sh`.
 O arquivo vai rodar a aplicação React e o servidor.

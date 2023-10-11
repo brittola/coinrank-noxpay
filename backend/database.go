@@ -16,9 +16,9 @@ func ConnectDatabase() (*gorm.DB, error) {
 		fmt.Println("Erro ao carregar o arquivo .env")
 	}
 
-	dbPassword := os.Getenv("DATABASE_PASSWORD")
+	dbURL := os.Getenv("DATABASE_URL")
 
-	db, err := gorm.Open("postgres", "user=brittola dbname=coinrank sslmode=disable password="+dbPassword)
+	db, err := gorm.Open("postgres", dbURL)
 	if err != nil {
 		return nil, err
 	}
